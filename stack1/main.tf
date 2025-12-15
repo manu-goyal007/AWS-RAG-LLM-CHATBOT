@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "us-west-2"  # Change this to your desired region
+  region = "us-west-1"  # Change this to your desired region
 }
 
 module "vpc" {
@@ -46,36 +46,3 @@ locals {
   bucket_name = "bedrock-kb-${data.aws_caller_identity.current.account_id}"
 }
 
-module "s3_bucket" {
-  source  = "terraform-aws-modules/s3-bucket/aws"
-  version = "~> 3.0"
-
-  bucket = local.bucket_name
-  acl    = "private"
-  force_destroy = true
-
-  control_object_ownership = true
-  object_ownership         = "BucketOwnerPreferred"
-
-  versioning = {
-    enabled = true
-  }
-
-  server_side_encryption_configuration = {
-    rule = {
-      apply_server_side_encryption_by_default = {
-        sse_algorithm = "AES256"
-      }
-    }
-  }
-
-  block_public_acls       = true
-  block_public_policy     = true
-  ignore_public_acls      = true
-  restrict_public_buckets = true
-
-  tags = {
-    Terraform   = "true"
-    Environment = "dev"
-  }
-}

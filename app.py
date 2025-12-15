@@ -6,7 +6,8 @@ from bedrock_utils import query_knowledge_base, generate_response, valid_prompt
 
 
 # Streamlit UI
-st.title("Bedrock Chat Application")
+st.title("Intelligent Chat Application")
+st.subheader("MAnu Goyal")
 
 # Sidebar for configurations
 st.sidebar.header("Configuration")

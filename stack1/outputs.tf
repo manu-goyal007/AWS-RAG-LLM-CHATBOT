@@ -29,7 +29,3 @@ output "aurora_arn" {
 output "rds_secret_arn" {
   value = module.aurora_serverless.database_secretsmanager_secret_arn
 }
-
-output "s3_bucket_name" {
-  value = module.s3_bucket.s3_bucket_arn
-}
