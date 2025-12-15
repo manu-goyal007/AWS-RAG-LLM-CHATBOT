@@ -5,13 +5,13 @@ import json
 # Initialize AWS Bedrock client
 bedrock = boto3.client(
     service_name='bedrock-runtime',
-    region_name='us-west-2'  # Replace with your AWS region
+    region_name='us-east-1'  # Replace with your AWS region
 )
 
 # Initialize Bedrock Knowledge Base client
 bedrock_kb = boto3.client(
     service_name='bedrock-agent-runtime',
-    region_name='us-west-2'  # Replace with your AWS region
+    region_name='us-east-1'  # Replace with your AWS region
 )
 
 def valid_prompt(prompt, model_id):
@@ -49,7 +49,7 @@ def valid_prompt(prompt, model_id):
             body=json.dumps({
                 "anthropic_version": "bedrock-2023-05-31", 
                 "messages": messages,
-                "max_tokens": 10,
+                "max_tokens": 25,
                 "temperature": 0,
                 "top_p": 0.1,
             })
@@ -105,7 +105,7 @@ def generate_response(prompt, model_id, temperature, top_p):
             body=json.dumps({
                 "anthropic_version": "bedrock-2023-05-31", 
                 "messages": messages,
-                "max_tokens": 500,
+                "max_tokens": 512,
                 "temperature": temperature,
                 "top_p": top_p,
             })
