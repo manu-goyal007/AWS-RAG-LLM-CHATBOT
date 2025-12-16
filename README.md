@@ -2,6 +2,14 @@
 
 This project sets up an AWS Bedrock Knowledge Base integrated with an Aurora Serverless PostgreSQL database. It also includes scripts for database setup and file upload to S3.
 
+## TLDR
+
+Check the screensghot folder to see what we try to achieve
+
+   ![Final](Screenshots/Final_Screenshot.png)   
+
+
+
 ## Table of Contents
 
 1. [Project Overview](#project-overview)
@@ -36,44 +44,9 @@ The goal is to create a Bedrock Knowledge Base that can leverage data stored in 
 Before you begin, ensure you have the following:
 
 - AWS CLI installed and configured with appropriate credentials
-- Terraform installed (version 0.12 or later)
-- Python 3.10 or later
+- Terraform installed (minwet i)
+- Python 3.12
 - pip (Python package manager)
-
-## Project Structure
-
-```
-project-root/
-│
-├── stack1
-|   ├── main.tf
-|   ├── outputs.tf
-|   └── variables.tf
-|
-├── stack2
-|   ├── main.tf
-|   ├── outputs.tf
-|   └── variables.tf
-|
-├── modules/
-│   ├── aurora_serverless/
-│   │   ├── main.tf
-│   │   ├── variables.tf
-│   │   └── outputs.tf
-│   └── bedrock_kb/
-│       ├── main.tf
-│       ├── variables.tf
-│       └── outputs.tf
-│
-├── scripts/
-│   ├── aurora_sql.sql
-│   └── upload_to_s3.py
-│
-├── spec-sheets/
-│   └── machine_files.pdf
-│
-└── README.md
-```
 
 ## Deployment Steps
 
@@ -90,7 +63,7 @@ project-root/
    - AWS region
    - VPC CIDR block
    - Aurora Serverless configuration
-   - s3 bucket
+   - s3 bucket 
 
 5. Deploy the infrastructure:
    ```
